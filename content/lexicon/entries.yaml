@@ -24,45 +24,59 @@
 "dormir|VERB": { lemma: dormir, pos: VERB, en: to sleep }
 "durer|VERB": { lemma: durer, pos: VERB, en: to last }
 "écouter|VERB": { lemma: écouter, pos: VERB, en: to listen to }
+"écrire|VERB": { lemma: écrire, pos: VERB, en: to write }
+"entrer|VERB": { lemma: entrer, pos: VERB, en: [to enter, to go in] }
 "être|VERB": { lemma: être, pos: VERB, en: to be }
+"faire|VERB": { lemma: faire, pos: VERB, en: [to do, to make], hint: "also used for weather: il fait froid" }
+"finir|VERB": { lemma: finir, pos: VERB, en: [to finish, to end] }
 "habiter|VERB": { lemma: habiter, pos: VERB, en: [to live, to reside] }
 "lire|VERB": { lemma: lire, pos: VERB, en: to read }
 "manger|VERB": { lemma: manger, pos: VERB, en: to eat }
 "mettre|VERB": { lemma: mettre, pos: VERB, en: to put }
 "monter|VERB": { lemma: monter, pos: VERB, en: [to get on, to go up] }
+"montrer|VERB": { lemma: montrer, pos: VERB, en: to show }
 "parler|VERB": { lemma: parler, pos: VERB, en: [to speak, to talk] }
 "partir|VERB": { lemma: partir, pos: VERB, en: to leave }
 "payer|VERB": { lemma: payer, pos: VERB, en: to pay }
+"penser|VERB": { lemma: penser, pos: VERB, en: to think }
 "plaire|VERB": { lemma: plaire, pos: VERB, en: to please }
 "prendre|VERB": { lemma: prendre, pos: VERB, en: to take }
 "préférer|VERB": { lemma: préférer, pos: VERB, en: to prefer }
 "préparer|VERB": { lemma: préparer, pos: VERB, en: [to prepare, to make] }
+"promettre|VERB": { lemma: promettre, pos: VERB, en: to promise }
 "regarder|VERB": { lemma: regarder, pos: VERB, en: [to look at, to watch] }
 "rentrer|VERB": { lemma: rentrer, pos: VERB, en: [to go home, to return] }
 "rester|VERB": { lemma: rester, pos: VERB, en: to stay }
+"revenir|VERB": { lemma: revenir, pos: VERB, en: [to come back, to return] }
 "revoir|VERB": { lemma: revoir, pos: VERB, en: to see again }
 "sentir|VERB": { lemma: sentir, pos: VERB, en: [to smell, to feel] }
 "travailler|VERB": { lemma: travailler, pos: VERB, en: to work }
 "trouver|VERB": { lemma: trouver, pos: VERB, en: to find }
 "vendre|VERB": { lemma: vendre, pos: VERB, en: to sell }
+"visiter|VERB": { lemma: visiter, pos: VERB, en: to visit }
 
 # --- nouns ---
 "ami|NOUN": { lemma: ami, pos: NOUN, gender: m, en: friend }
 "an|NOUN": { lemma: an, pos: NOUN, gender: m, en: year }
+"appartement|NOUN": { lemma: appartement, pos: NOUN, gender: m, en: [flat, apartment] }
 "café|NOUN": { lemma: café, pos: NOUN, gender: m, en: [coffee, café] }
 "campagne|NOUN": { lemma: campagne, pos: NOUN, gender: f, en: countryside }
+"canal|NOUN": { lemma: canal, pos: NOUN, gender: m, en: canal }
 "canapé|NOUN": { lemma: canapé, pos: NOUN, gender: m, en: sofa }
 "champ|NOUN": { lemma: champ, pos: NOUN, gender: m, en: field }
 "chat|NOUN": { lemma: chat, pos: NOUN, gender: m, en: cat }
 "chien|NOUN": { lemma: chien, pos: NOUN, gender: m, en: dog }
+"ciel|NOUN": { lemma: ciel, pos: NOUN, gender: m, en: sky }
 "côté|NOUN": { lemma: côté, pos: NOUN, gender: m, en: side }
 "couteau|NOUN": { lemma: couteau, pos: NOUN, gender: m, en: knife }
 "croissant|NOUN": { lemma: croissant, pos: NOUN, gender: m, en: croissant }
 "dame|NOUN": { lemma: dame, pos: NOUN, gender: f, en: lady }
 "déjeuner|NOUN": { lemma: déjeuner, pos: NOUN, gender: m, en: lunch, hint: "le petit déjeuner is breakfast" }
+"dîner|NOUN": { lemma: dîner, pos: NOUN, gender: m, en: dinner }
 "écran|NOUN": { lemma: écran, pos: NOUN, gender: m, en: screen }
 "église|NOUN": { lemma: église, pos: NOUN, gender: f, en: church }
 "enfant|NOUN": { lemma: enfant, pos: NOUN, gender: m, en: child }
+"entrée|NOUN": { lemma: entrée, pos: NOUN, gender: f, en: entrance }
 "étudiant|NOUN": { lemma: étudiant, pos: NOUN, gender: m, en: student }
 "femme|NOUN": { lemma: femme, pos: NOUN, gender: f, en: [woman, wife] }
 "fenêtre|NOUN": { lemma: fenêtre, pos: NOUN, gender: f, en: window }
@@ -74,19 +88,24 @@
 "heure|NOUN": { lemma: heure, pos: NOUN, gender: f, en: [hour, o'clock] }
 "homme|NOUN": { lemma: homme, pos: NOUN, gender: m, en: man }
 "huile|NOUN": { lemma: huile, pos: NOUN, gender: f, en: oil }
+"intérieur|NOUN": { lemma: intérieur, pos: NOUN, gender: m, en: [inside, interior] }
 "jambe|NOUN": { lemma: jambe, pos: NOUN, gender: f, en: leg }
 "journal|NOUN": { lemma: journal, pos: NOUN, gender: m, en: newspaper }
 "kilo|NOUN": { lemma: kilo, pos: NOUN, gender: m, en: kilo }
 "lait|NOUN": { lemma: lait, pos: NOUN, gender: m, en: milk }
 "légume|NOUN": { lemma: légume, pos: NOUN, gender: m, en: vegetable }
+"lendemain|NOUN": { lemma: lendemain, pos: NOUN, gender: m, en: the next day }
 "librairie|NOUN": { lemma: librairie, pos: NOUN, gender: f, en: bookshop, hint: "false friend: a library is une bibliothèque" }
 "livre|NOUN": { lemma: livre, pos: NOUN, gender: m, en: book }
 "madame|NOUN": { lemma: madame, pos: NOUN, gender: f, en: [Madam, Mrs] }
 "maison|NOUN": { lemma: maison, pos: NOUN, gender: f, en: [house, home] }
 "marché|NOUN": { lemma: marché, pos: NOUN, gender: m, en: market }
 "matin|NOUN": { lemma: matin, pos: NOUN, gender: m, en: morning }
+"métro|NOUN": { lemma: métro, pos: NOUN, gender: m, en: [metro, underground] }
 "midi|NOUN": { lemma: midi, pos: NOUN, gender: m, en: [midday, noon] }
+"minute|NOUN": { lemma: minute, pos: NOUN, gender: f, en: minute }
 "monde|NOUN": { lemma: monde, pos: NOUN, gender: m, en: [world, people], hint: "beaucoup de monde = a lot of people" }
+"musée|NOUN": { lemma: musée, pos: NOUN, gender: m, en: museum }
 "musique|NOUN": { lemma: musique, pos: NOUN, gender: f, en: music }
 "nom|NOUN": { lemma: nom, pos: NOUN, gender: m, en: name }
 "numéro|NOUN": { lemma: numéro, pos: NOUN, gender: m, en: number }
@@ -95,7 +114,11 @@
 "pain|NOUN": { lemma: pain, pos: NOUN, gender: m, en: bread }
 "papier|NOUN": { lemma: papier, pos: NOUN, gender: m, en: paper }
 "parc|NOUN": { lemma: parc, pos: NOUN, gender: m, en: park }
+"pâtes|NOUN": { lemma: pâtes, pos: NOUN, gender: f, en: pasta, hint: always plural in French }
+"paysage|NOUN": { lemma: paysage, pos: NOUN, gender: m, en: [landscape, scenery] }
+"père|NOUN": { lemma: père, pos: NOUN, gender: m, en: father }
 "peur|NOUN": { lemma: peur, pos: NOUN, gender: f, en: fear, hint: "avoir peur = to be afraid" }
+"pizza|NOUN": { lemma: pizza, pos: NOUN, gender: f, en: pizza }
 "place|NOUN": { lemma: place, pos: NOUN, gender: f, en: [square, seat, room] }
 "poisson|NOUN": { lemma: poisson, pos: NOUN, gender: m, en: fish }
 "poivre|NOUN": { lemma: poivre, pos: NOUN, gender: m, en: pepper }
@@ -112,16 +135,19 @@
 "siège|NOUN": { lemma: siège, pos: NOUN, gender: m, en: seat }
 "soeur|NOUN": { lemma: soeur, pos: NOUN, gender: f, en: sister }
 "soir|NOUN": { lemma: soir, pos: NOUN, gender: m, en: evening }
+"tableau|NOUN": { lemma: tableau, pos: NOUN, gender: m, en: [painting, picture] }
 "table|NOUN": { lemma: table, pos: NOUN, gender: f, en: table }
 "téléphone|NOUN": { lemma: téléphone, pos: NOUN, gender: m, en: telephone }
 "télévision|NOUN": { lemma: télévision, pos: NOUN, gender: f, en: television }
 "tête|NOUN": { lemma: tête, pos: NOUN, gender: f, en: head }
 "tomate|NOUN": { lemma: tomate, pos: NOUN, gender: f, en: tomato }
+"touriste|NOUN": { lemma: touriste, pos: NOUN, gender: m, en: tourist }
 "train|NOUN": { lemma: train, pos: NOUN, gender: m, en: train }
 "travail|NOUN": { lemma: travail, pos: NOUN, gender: m, en: [work, job] }
 "valise|NOUN": { lemma: valise, pos: NOUN, gender: f, en: suitcase }
 "vendeuse|NOUN": { lemma: vendeuse, pos: NOUN, gender: f, en: [saleswoman, seller] }
 "village|NOUN": { lemma: village, pos: NOUN, gender: m, en: village }
+"ville|NOUN": { lemma: ville, pos: NOUN, gender: f, en: [city, town] }
 "voyage|NOUN": { lemma: voyage, pos: NOUN, gender: m, en: [journey, trip] }
 "voyageur|NOUN": { lemma: voyageur, pos: NOUN, gender: m, en: traveller }
 "week-end|NOUN": { lemma: week-end, pos: NOUN, gender: m, en: weekend }
@@ -134,30 +160,40 @@
 "Marie|PROPN": { lemma: Marie, pos: PROPN, en: Marie }
 "Paris|PROPN": { lemma: Paris, pos: PROPN, en: Paris }
 "Paul|PROPN": { lemma: Paul, pos: PROPN, en: Paul }
+"Seine|PROPN": { lemma: Seine, pos: PROPN, en: the Seine, hint: the river through Paris }
 "Sofia|PROPN": { lemma: Sofia, pos: PROPN, en: Sofia }
 
 # --- adjectives ---
 "bleu|ADJ": { lemma: bleu, pos: ADJ, en: blue }
 "bon|ADJ": { lemma: bon, pos: ADJ, en: good }
 "bruyant|ADJ": { lemma: bruyant, pos: ADJ, en: noisy }
+"clair|ADJ": { lemma: clair, pos: ADJ, en: [clear, bright] }
 "content|ADJ": { lemma: content, pos: ADJ, en: [happy, pleased] }
 "délicieux|ADJ": { lemma: délicieux, pos: ADJ, en: delicious }
 "frais|ADJ": { lemma: frais, pos: ADJ, en: fresh }
+"froid|ADJ": { lemma: froid, pos: ADJ, en: cold }
 "grand|ADJ": { lemma: grand, pos: ADJ, en: [big, large, tall] }
+"italien|ADJ": { lemma: italien, pos: ADJ, en: Italian }
 "jaune|ADJ": { lemma: jaune, pos: ADJ, en: yellow }
+"long|ADJ": { lemma: long, pos: ADJ, en: long }
 "lourd|ADJ": { lemma: lourd, pos: ADJ, en: heavy }
+"magnifique|ADJ": { lemma: magnifique, pos: ADJ, en: [magnificent, wonderful] }
 "meilleur|ADJ": { lemma: meilleur, pos: ADJ, en: [best, better] }
 "noir|ADJ": { lemma: noir, pos: ADJ, en: black }
 "petit|ADJ": { lemma: petit, pos: ADJ, en: [small, little] }
+"préféré|ADJ": { lemma: préféré, pos: ADJ, en: favourite }
+"premier|ADJ": { lemma: premier, pos: ADJ, en: first }
 "rouge|ADJ": { lemma: rouge, pos: ADJ, en: red }
 "simple|ADJ": { lemma: simple, pos: ADJ, en: simple }
 "tranquille|ADJ": { lemma: tranquille, pos: ADJ, en: [quiet, calm] }
+"triste|ADJ": { lemma: triste, pos: ADJ, en: sad }
 "vert|ADJ": { lemma: vert, pos: ADJ, en: green }
 "vieux|ADJ": { lemma: vieux, pos: ADJ, en: old }
 
 # --- adverbs ---
 "aujourd'hui|ADV": { lemma: aujourd'hui, pos: ADV, en: today }
 "beaucoup|ADV": { lemma: beaucoup, pos: ADV, en: [a lot, much] }
+"bientôt|ADV": { lemma: bientôt, pos: ADV, en: soon }
 "bien|ADV": { lemma: bien, pos: ADV, en: well }
 "comment|ADV": { lemma: comment, pos: ADV, en: how }
 "ensemble|ADV": { lemma: ensemble, pos: ADV, en: together }
@@ -167,6 +203,7 @@
 "maintenant|ADV": { lemma: maintenant, pos: ADV, en: now }
 "ne|ADV": { lemma: ne, pos: ADV, en: not, hint: "pairs with pas around the verb" }
 "pas|ADV": { lemma: pas, pos: ADV, en: not, hint: "pairs with ne around the verb" }
+"pendant|ADV": { lemma: pendant, pos: ADV, en: [during, for] }
 "peu|ADV": { lemma: peu, pos: ADV, en: [little, few] }
 "près|ADV": { lemma: près, pos: ADV, en: near, hint: "près de = near to" }
 "puis|ADV": { lemma: puis, pos: ADV, en: then }
@@ -182,6 +219,7 @@
 "il|PRON": { lemma: il, pos: PRON, en: [he, it] }
 "ils|PRON": { lemma: ils, pos: PRON, en: they, hint: "masculine subject" }
 "le|PRON": { lemma: le, pos: PRON, en: [him, it, them], hint: "la = her, les = them" }
+"lui|PRON": { lemma: lui, pos: PRON, en: [to him, to her] }
 "se|PRON": { lemma: se, pos: PRON, en: [oneself, himself, herself] }
 "tu|PRON": { lemma: tu, pos: PRON, en: you, hint: "singular and informal" }
 "vous|PRON": { lemma: vous, pos: PRON, en: you, hint: "plural or formal" }
@@ -217,6 +255,7 @@
 "et|CCONJ": { lemma: et, pos: CCONJ, en: and }
 "mais|CCONJ": { lemma: mais, pos: CCONJ, en: but }
 "parce que|SCONJ": { lemma: parce que, pos: SCONJ, en: because }
+"quand|SCONJ": { lemma: quand, pos: SCONJ, en: when }
 "que|SCONJ": { lemma: que, pos: SCONJ, en: that }
 "si|SCONJ": { lemma: si, pos: SCONJ, en: if }
 

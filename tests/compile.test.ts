@@ -110,10 +110,30 @@ describe("compileStory", () => {
   it("lets an occurrence override beat the shared lexicon", () => {
     const { story: s } = compile(
       "Le chat dort.\n> The cat sleeps.",
-      'gloss:\n  "0:1": { entry: "si|SCONJ", note: homograph }\n',
+      'gloss:\n  "0:1": { form: chat, entry: "si|SCONJ", note: homograph }\n',
     );
     expect(s!.sentences[0]!.tokens[1]).toMatchObject({ s: "chat", entry: "si|SCONJ", note: "homograph" });
     expect(s!.entries["si|SCONJ"]).toBeDefined();
+  });
+
+  it("rejects an occurrence override aimed at the wrong word", () => {
+    // Indices shift whenever a sentence is inserted, so the declared form is
+    // checked rather than trusted.
+    const { story: s, issues } = compile(
+      "Le chat dort.\n> The cat sleeps.",
+      'gloss:\n  "0:2": { form: chat, entry: "si|SCONJ" }\n',
+    );
+    expect(s).toBeNull();
+    expect(issues.some((i) => /indices have shifted/.test(i.message))).toBe(true);
+  });
+
+  it("rejects an occurrence override with no form guard", () => {
+    const { story: s, issues } = compile(
+      "Le chat dort.\n> The cat sleeps.",
+      'gloss:\n  "0:1": { entry: "si|SCONJ" }\n',
+    );
+    expect(s).toBeNull();
+    expect(issues.some((i) => /missing form:/.test(i.message))).toBe(true);
   });
 
   it("rejects a frontmatter declaration split by an unquoted comma", () => {

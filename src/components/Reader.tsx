@@ -11,7 +11,14 @@ interface Selection {
   anchor: { x: number; y: number };
 }
 
-export function Reader({ story }: { story: Story }) {
+interface ReaderProps {
+  story: Story;
+  read: boolean;
+  onBack: () => void;
+  onToggleRead: () => void;
+}
+
+export function Reader({ story, read, onBack, onToggleRead }: ReaderProps) {
   const [selection, setSelection] = useState<Selection | null>(null);
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
   const [allRevealed, setAllRevealed] = useState(false);
@@ -62,6 +69,9 @@ export function Reader({ story }: { story: Story }) {
       if (e.target === e.currentTarget) setSelection(null);
     }}>
       <header className="story-head">
+        <button type="button" className="back" onClick={onBack}>
+          ← Library
+        </button>
         <h1 lang="fr">{story.title}</h1>
         <p className="story-sub">
           <span className="level-badge">{story.level}</span>
@@ -90,6 +100,16 @@ export function Reader({ story }: { story: Story }) {
           ))}
         </section>
       ))}
+
+      <footer className="story-foot">
+        <button
+          type="button"
+          className={`finish${read ? " done" : ""}`}
+          onClick={onToggleRead}
+        >
+          {read ? "✓ Read — mark unread" : "Mark as read"}
+        </button>
+      </footer>
 
       {selection && (
         <WordPopup

@@ -3,8 +3,14 @@
 A CEFR-graded French reader for English speakers. Tap any word for its
 translation, dictionary form and part of speech.
 
-**Status:** step 1 of 5 — the reader, with tap-to-translate on three A1 stories.
-Library filtering, vocabulary/SRS, audio and quizzes are not built yet.
+**Status:** steps 1-2 of 5.
+
+- **Reader** — one sentence per line, tap any word for its translation,
+  dictionary form and part of speech; per-sentence English toggle.
+- **Library** — four stories (three A1, one A2), level filtering that opens at
+  your profile level, read/unread tracking and a day streak.
+
+Vocabulary/SRS, audio and quizzes are not built yet.
 
 ## Running it
 
@@ -26,7 +32,7 @@ Other scripts:
 
 ```
 content/
-  stories/a1/*.md        authored stories: frontmatter + sentence/translation pairs
+  stories/<level>/*.md   authored stories: frontmatter + sentence/translation pairs
   lexicon/forms.yaml     inflected form -> lexeme, plus how it is inflected
   lexicon/entries.yaml   lexeme -> English senses, gender, usage hints
   dist/                  compiled JSON (generated, not committed)
@@ -36,7 +42,10 @@ tools/
   compile.ts             CLI: content/ -> content/dist/
 src/
   types/story.ts         the data model, shared by compiler and reader
-  components/            Reader, SentenceLine, WordPopup
+  lib/progress.ts        profile, read tracking and streak (pure)
+  lib/route.ts           hash routing between library and reader
+  storage.ts             the only module that touches localStorage
+  components/            Library, Reader, SentenceLine, WordPopup
 docs/data-model.md       the design, and why glosses are precomputed
 ```
 

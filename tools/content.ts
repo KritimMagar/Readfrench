@@ -46,6 +46,8 @@ interface MweDecl {
 }
 
 interface GlossDecl {
+  /** Required on an occurrence override: the surface form it must land on. */
+  form?: string;
   lemma?: string;
   pos?: string;
   en?: string | string[];
@@ -292,7 +294,7 @@ export function compileStory(
     return eid;
   };
 
-  const GLOSS_KEYS = new Set(["lemma", "pos", "en", "gender", "hint", "note", "entry"]);
+  const GLOSS_KEYS = new Set(["form", "lemma", "pos", "en", "gender", "hint", "note", "entry"]);
   const MWE_KEYS = new Set(["fr", "en", "lemma", "note", "hint"]);
   const checkKeys = (label: string, decl: object, allowed: Set<string>) => {
     for (const k of Object.keys(decl)) {
@@ -349,6 +351,14 @@ export function compileStory(
       if (t.k !== "word") continue;
 
       const override = occurrenceOverrides.get(`${si}:${t.i}`);
+      if (override && formKey(override.form ?? "") !== formKey(t.s)) {
+        fail(
+          `gloss "${si}:${t.i}" expects the word "${override.form ?? "(missing form:)"}" ` +
+            `but token ${t.i} of sentence ${si} is "${t.s}" — ` +
+            `sentence or token indices have shifted`,
+        );
+        continue;
+      }
       if (override?.entry) {
         t.entry = override.entry;
         if (override.note) t.note = override.note;

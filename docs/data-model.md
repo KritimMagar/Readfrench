@@ -1,7 +1,8 @@
 # Story data model
 
-Status: **implemented for step 1** (reader with tap-to-translate on three A1
-stories). Steps 2-5 are sketched at the end and not built.
+Status: **implemented for steps 1-2** (reader with tap-to-translate; library
+with level filtering, read tracking and a streak). Steps 3-5 are sketched at
+the end and not built.
 
 This document defines how a story is authored, how it is compiled, and what the
 reader consumes at runtime. Everything in steps 2-5 of the build order (library,
@@ -295,9 +296,23 @@ speeds, not native ones. *Le chat de Marie*: 178 words at A1 → 3 min.
 
 Sketched to show the model does not need reworking, not to be built now.
 
-**Library (step 2)** reads a generated `content/dist/index.json` — one entry per
-story with `id`, `level`, `title`, `titleEn`, `topics`, `wordCount`,
+**Library (step 2, built)** reads a generated `content/dist/index.json` — one
+entry per story with `id`, `level`, `title`, `titleEn`, `topics`, `wordCount`,
 `readingTimeMin`. Level filtering never touches story bodies.
+
+Profile and progress (`src/lib/progress.ts`) are separate from story content,
+because they belong to the reader rather than the corpus:
+
+```ts
+interface Profile  { level: Level }
+interface Progress { read: string[]; readDates: string[] }   // YYYY-MM-DD, local
+```
+
+`readDates` holds days rather than a streak counter, so the streak is derived
+(`currentStreak`) rather than stored — a stored counter drifts the moment a
+device clock or timezone moves. A day already read still counts towards the
+streak if the story is later marked unread. `src/storage.ts` is the only module
+that touches `localStorage`, so step 3 swaps four function bodies for API calls.
 
 **Vocabulary (step 3)** keys on `EntryId` and snapshots its context:
 

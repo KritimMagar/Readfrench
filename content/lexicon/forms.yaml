@@ -6,14 +6,20 @@
 # --- verb forms ---
 a: { entry: "avoir|VERB", note: "present, il/elle" }
 achète: { entry: "acheter|VERB", note: "present, il/elle" }
+acheté: { entry: "acheter|VERB", note: past participle }
 aime: { entry: "aimer|VERB", note: "present, il/elle" }
 ajoute: { entry: "ajouter|VERB", note: "present, il/elle" }
 allez-vous: { entry: "aller|VERB", note: "present vous, inverted for a question" }
 appelle: { entry: "appeler|VERB", note: "present, il/elle" }
 arrive: { entry: "arriver|VERB", note: "present, il/elle" }
+arrivée: { entry: "arriver|VERB", note: "past participle, feminine" }
 attend: { entry: "attendre|VERB", note: "present, il/elle" }
+attendait: { entry: "attendre|VERB", note: "imperfect, il/elle" }
+attendu: { entry: "attendre|VERB", note: past participle }
+avait: { entry: "avoir|VERB", note: "imperfect, il/elle" }
 caresse: { entry: "caresser|VERB", note: "present, il/elle" }
 cherche: { entry: "chercher|VERB", note: "present, il/elle" }
+choisi: { entry: "choisir|VERB", note: past participle }
 choisit: { entry: "choisir|VERB", note: "present, il/elle" }
 commence: { entry: "commencer|VERB", note: "present, il/elle" }
 connaît: { entry: "connaître|VERB", note: "present, il/elle" }
@@ -26,26 +32,40 @@ donne: { entry: "donner|VERB", note: "present, il/elle" }
 dort: { entry: "dormir|VERB", note: "present, il/elle" }
 dure: { entry: "durer|VERB", note: "present, il/elle" }
 écoute: { entry: "écouter|VERB", note: "present, il/elle" }
+écrit: { entry: "écrire|VERB", note: past participle }
+entrées: { entry: "entrer|VERB", note: "past participle, feminine plural" }
 es: { entry: "être|VERB", note: "present, tu" }
 est: { entry: "être|VERB", note: "present, il/elle" }
+était: { entry: "être|VERB", note: "imperfect, il/elle" }
+faisait: { entry: "faire|VERB", note: "imperfect, il/elle" }
+fini: { entry: "finir|VERB", note: past participle }
 habite: { entry: "habiter|VERB", note: "present, il/elle" }
 lit: { entry: "lire|VERB", note: "present, il/elle" }
 mange: { entry: "manger|VERB", note: "present, il/elle" }
+mangé: { entry: "manger|VERB", note: past participle }
 manger: { entry: "manger|VERB", note: infinitive }
 met: { entry: "mettre|VERB", note: "present, il/elle" }
 monte: { entry: "monter|VERB", note: "present, il/elle" }
+montré: { entry: "montrer|VERB", note: past participle }
+ont: { entry: "avoir|VERB", note: "present, ils/elles" }
 paie: { entry: "payer|VERB", note: "present, il/elle" }
 parle: { entry: "parler|VERB", note: "present, il/elle" }
 part: { entry: "partir|VERB", note: "present, il/elle" }
+partir: { entry: "partir|VERB", note: infinitive }
+pensé: { entry: "penser|VERB", note: past participle }
 plaît: { entry: "plaire|VERB", note: "present, il/elle" }
 prend: { entry: "prendre|VERB", note: "present, il/elle" }
 préfère: { entry: "préférer|VERB", note: "present, il/elle" }
 prépare: { entry: "préparer|VERB", note: "present, il/elle" }
+pris: { entry: "prendre|VERB", note: past participle }
+promis: { entry: "promettre|VERB", note: past participle }
 regarde: { entry: "regarder|VERB", note: "present, il/elle" }
+regardé: { entry: "regarder|VERB", note: past participle }
 regardent: { entry: "regarder|VERB", note: "present, ils/elles" }
 regarder: { entry: "regarder|VERB", note: infinitive }
 rentre: { entry: "rentrer|VERB", note: "present, il/elle" }
 reste: { entry: "rester|VERB", note: "present, il/elle" }
+revenir: { entry: "revenir|VERB", note: infinitive }
 revoir: { entry: "revoir|VERB", note: infinitive }
 sent: { entry: "sentir|VERB", note: "present, il/elle" }
 sont: { entry: "être|VERB", note: "present, ils/elles" }
@@ -53,26 +73,32 @@ travaille: { entry: "travailler|VERB", note: "present, il/elle" }
 trouve: { entry: "trouver|VERB", note: "present, il/elle" }
 va: { entry: "aller|VERB", note: "present, il/elle" }
 vend: { entry: "vendre|VERB", note: "present, il/elle" }
+visité: { entry: "visiter|VERB", note: past participle }
 vont: { entry: "aller|VERB", note: "present, ils/elles" }
 
 # --- nouns ---
 ami: { entry: "ami|NOUN" }
 amis: { entry: "ami|NOUN", note: plural }
 ans: { entry: "an|NOUN", note: plural }
+appartement: { entry: "appartement|NOUN" }
 café: { entry: "café|NOUN" }
 campagne: { entry: "campagne|NOUN" }
+canal: { entry: "canal|NOUN" }
 canapé: { entry: "canapé|NOUN" }
 champs: { entry: "champ|NOUN", note: plural }
 chat: { entry: "chat|NOUN" }
 chiens: { entry: "chien|NOUN", note: plural }
+ciel: { entry: "ciel|NOUN" }
 côté: { entry: "côté|NOUN" }
 couteau: { entry: "couteau|NOUN" }
 croissant: { entry: "croissant|NOUN" }
 dame: { entry: "dame|NOUN" }
 déjeuner: { entry: "déjeuner|NOUN" }
+dîner: { entry: "dîner|NOUN" }
 écran: { entry: "écran|NOUN" }
 église: { entry: "église|NOUN" }
 enfants: { entry: "enfant|NOUN", note: plural }
+entrée: { entry: "entrée|NOUN" }
 étudiante: { entry: "étudiant|NOUN", note: feminine form }
 femme: { entry: "femme|NOUN" }
 fenêtre: { entry: "fenêtre|NOUN" }
@@ -85,19 +111,24 @@ heure: { entry: "heure|NOUN" }
 heures: { entry: "heure|NOUN", note: plural }
 homme: { entry: "homme|NOUN" }
 huile: { entry: "huile|NOUN" }
+intérieur: { entry: "intérieur|NOUN" }
 jambes: { entry: "jambe|NOUN", note: plural }
 journal: { entry: "journal|NOUN" }
 kilo: { entry: "kilo|NOUN" }
 lait: { entry: "lait|NOUN" }
 légumes: { entry: "légume|NOUN", note: plural }
+lendemain: { entry: "lendemain|NOUN" }
 librairie: { entry: "librairie|NOUN" }
 livre: { entry: "livre|NOUN" }
 madame: { entry: "madame|NOUN" }
 maison: { entry: "maison|NOUN" }
 marché: { entry: "marché|NOUN" }
 matin: { entry: "matin|NOUN" }
+métro: { entry: "métro|NOUN" }
 midi: { entry: "midi|NOUN" }
+minutes: { entry: "minute|NOUN", note: plural }
 monde: { entry: "monde|NOUN" }
+musée: { entry: "musée|NOUN" }
 musique: { entry: "musique|NOUN" }
 nom: { entry: "nom|NOUN" }
 numéro: { entry: "numéro|NOUN" }
@@ -106,7 +137,11 @@ oiseaux: { entry: "oiseau|NOUN", note: plural }
 pain: { entry: "pain|NOUN" }
 papier: { entry: "papier|NOUN" }
 parc: { entry: "parc|NOUN" }
+pâtes: { entry: "pâtes|NOUN", note: always plural }
+paysage: { entry: "paysage|NOUN" }
+père: { entry: "père|NOUN" }
 peur: { entry: "peur|NOUN" }
+pizza: { entry: "pizza|NOUN" }
 place: { entry: "place|NOUN" }
 poisson: { entry: "poisson|NOUN" }
 poivre: { entry: "poivre|NOUN" }
@@ -126,16 +161,20 @@ soeur: { entry: "soeur|NOUN" }
 soeurs: { entry: "soeur|NOUN", note: plural }
 soir: { entry: "soir|NOUN" }
 table: { entry: "table|NOUN" }
+tableau: { entry: "tableau|NOUN" }
+tableaux: { entry: "tableau|NOUN", note: plural }
 tables: { entry: "table|NOUN", note: plural }
 téléphone: { entry: "téléphone|NOUN" }
 télévision: { entry: "télévision|NOUN" }
 tête: { entry: "tête|NOUN" }
 tomates: { entry: "tomate|NOUN", note: plural }
+touristes: { entry: "touriste|NOUN", note: plural }
 train: { entry: "train|NOUN" }
 travail: { entry: "travail|NOUN" }
 valise: { entry: "valise|NOUN" }
 vendeuse: { entry: "vendeuse|NOUN" }
 villages: { entry: "village|NOUN", note: plural }
+ville: { entry: "ville|NOUN" }
 voyage: { entry: "voyage|NOUN" }
 voyageurs: { entry: "voyageur|NOUN", note: plural }
 week-end: { entry: "week-end|NOUN" }
@@ -148,29 +187,40 @@ lyon: { entry: "Lyon|PROPN" }
 marie: { entry: "Marie|PROPN" }
 paris: { entry: "Paris|PROPN" }
 paul: { entry: "Paul|PROPN" }
+seine: { entry: "Seine|PROPN" }
 sofia: { entry: "Sofia|PROPN" }
 
 # --- adjectives ---
+bleu: { entry: "bleu|ADJ", note: masculine singular }
 bleue: { entry: "bleu|ADJ", note: feminine singular }
 bon: { entry: "bon|ADJ", note: masculine singular }
 bruyante: { entry: "bruyant|ADJ", note: feminine singular }
+clair: { entry: "clair|ADJ", note: masculine singular }
 content: { entry: "content|ADJ", note: masculine singular }
 contentes: { entry: "content|ADJ", note: feminine plural }
 délicieuse: { entry: "délicieux|ADJ", note: feminine singular }
 frais: { entry: "frais|ADJ", note: masculine plural }
+froid: { entry: "froid|ADJ", note: masculine singular }
 grand: { entry: "grand|ADJ", note: masculine singular }
 grande: { entry: "grand|ADJ", note: feminine singular }
+italien: { entry: "italien|ADJ", note: masculine singular }
 jaunes: { entry: "jaune|ADJ", note: plural }
+long: { entry: "long|ADJ", note: masculine singular }
 lourd: { entry: "lourd|ADJ", note: masculine singular }
+magnifique: { entry: "magnifique|ADJ" }
 meilleur: { entry: "meilleur|ADJ", note: masculine singular }
 meilleures: { entry: "meilleur|ADJ", note: feminine plural }
 noir: { entry: "noir|ADJ", note: masculine singular }
 petit: { entry: "petit|ADJ", note: masculine singular }
 petite: { entry: "petit|ADJ", note: feminine singular }
 petits: { entry: "petit|ADJ", note: masculine plural }
+préféré: { entry: "préféré|ADJ", note: masculine singular }
+premier: { entry: "premier|ADJ", note: masculine singular }
 rouges: { entry: "rouge|ADJ", note: plural }
 simple: { entry: "simple|ADJ" }
 tranquille: { entry: "tranquille|ADJ" }
+triste: { entry: "triste|ADJ" }
+vert: { entry: "vert|ADJ", note: masculine singular }
 verts: { entry: "vert|ADJ", note: masculine plural }
 vieille: { entry: "vieux|ADJ", note: feminine singular }
 
@@ -178,6 +228,7 @@ vieille: { entry: "vieux|ADJ", note: feminine singular }
 aujourd'hui: { entry: "aujourd'hui|ADV" }
 beaucoup: { entry: "beaucoup|ADV" }
 bien: { entry: "bien|ADV" }
+bientôt: { entry: "bientôt|ADV" }
 comment: { entry: "comment|ADV" }
 ensemble: { entry: "ensemble|ADV" }
 ensuite: { entry: "ensuite|ADV" }
@@ -187,6 +238,7 @@ maintenant: { entry: "maintenant|ADV" }
 n': { entry: "ne|ADV", note: elided before a vowel }
 ne: { entry: "ne|ADV" }
 pas: { entry: "pas|ADV" }
+pendant: { entry: "pendant|ADV" }
 peu: { entry: "peu|ADV" }
 près: { entry: "près|ADV" }
 puis: { entry: "puis|ADV" }
@@ -201,6 +253,7 @@ elle: { entry: "elle|PRON" }
 elles: { entry: "elles|PRON" }
 il: { entry: "il|PRON" }
 ils: { entry: "ils|PRON" }
+lui: { entry: "lui|PRON", note: indirect object }
 s': { entry: "se|PRON", note: "reflexive, elided before a vowel" }
 tu: { entry: "tu|PRON" }
 vous: { entry: "vous|PRON" }
@@ -244,6 +297,7 @@ et: { entry: "et|CCONJ" }
 mais: { entry: "mais|CCONJ" }
 parce: { entry: "parce que|SCONJ", note: first half of parce que }
 qu': { entry: "que|SCONJ", note: elided before a vowel }
+quand: { entry: "quand|SCONJ" }
 que: { entry: "que|SCONJ" }
 
 # --- numbers and interjections ---

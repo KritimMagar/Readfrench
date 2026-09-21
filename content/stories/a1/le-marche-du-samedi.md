@@ -8,9 +8,9 @@ source: original
 gloss:
   # Homographs the shared lexicon gets wrong in this story.
   # "s'" here is si (if), not the reflexive se.
-  "16:6": { entry: "si|SCONJ", note: elided before a vowel }
+  "16:6": { form: "s'", entry: "si|SCONJ", note: elided before a vowel }
   # "les" here is an object pronoun, not the article.
-  "18:1": { entry: "le|PRON", note: "direct object, plural" }
+  "18:1": { form: les, entry: "le|PRON", note: "direct object, plural" }
 mwe:
   - fr: il y a
     en: there is, there are
