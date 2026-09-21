@@ -447,3 +447,180 @@ body {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* --- top nav --- */
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 560;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.nav-item:hover { color: var(--text); }
+
+.nav-item.on {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.nav-count {
+  font-size: 0.72rem;
+  background: var(--line);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.02rem 0.38rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.nav-due {
+  margin-left: auto;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--phrase);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* --- popup save --- */
+.popup-save {
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.3rem;
+}
+
+.save-state {
+  font: inherit;
+  font-size: 0.83rem;
+  text-align: left;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.save-state.saved { color: var(--muted); }
+.save-state:hover { border-color: var(--accent); }
+.save-hint { font-size: 0.76rem; color: var(--muted); }
+
+/* --- vocabulary --- */
+.review-cta { margin-bottom: 1.3rem; }
+.review-cta:disabled { opacity: 0.5; cursor: default; background: transparent; color: var(--muted); border-color: var(--line); }
+
+.vocab-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
+
+.vocab-item {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.vocab-head { display: flex; align-items: baseline; gap: 0.5rem; }
+.vocab-lemma { font-size: 1.1rem; font-weight: 640; }
+.vocab-pos { font-size: 0.76rem; color: var(--muted); }
+
+.vocab-remove {
+  margin-left: auto;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.2rem;
+}
+
+.vocab-remove:hover { color: var(--phrase); }
+.vocab-en { margin: 0.1rem 0 0.5rem; color: var(--accent); font-size: 0.95rem; }
+
+.context-fr {
+  margin: 0;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.context-fr mark {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 0 0.12em;
+}
+
+.vocab-meta { margin: 0.45rem 0 0; font-size: 0.76rem; color: var(--muted); }
+
+/* --- review --- */
+.card {
+  padding: 2rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card-front { margin: 0 0 1.2rem; font-size: 2rem; font-weight: 600; letter-spacing: -0.01em; }
+.card-back { display: grid; gap: 1rem; }
+.card-en { margin: 0; font-size: 1.25rem; color: var(--accent); font-weight: 560; }
+
+.card-context {
+  text-align: left;
+  display: grid;
+  gap: 0.3rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.context-label { font-size: 0.74rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.context-en { margin: 0; font-size: 0.88rem; color: var(--muted); padding-left: 0.7rem; }
+
+.grades { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.45rem; margin-bottom: 1.2rem; }
+
+.grade {
+  display: grid;
+  gap: 0.15rem;
+  font: inherit;
+  padding: 0.55rem 0.3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.grade:hover { border-color: var(--accent); }
+.grade-label { font-weight: 600; font-size: 0.92rem; }
+.grade-hint { font-size: 0.7rem; color: var(--muted); }
+.grade-again:hover { border-color: var(--phrase); }
+.review-quit { margin-bottom: 0; }
+
+@media (max-width: 30rem) {
+  .grades { grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,14 +1,31 @@
 import { useEffect, useState } from "react";
 
-export type Route = { name: "library" } | { name: "story"; id: string };
+export type Route =
+  | { name: "library" }
+  | { name: "story"; id: string }
+  | { name: "vocabulary" }
+  | { name: "review" };
 
 export function parseHash(hash: string): Route {
-  const m = /^#\/story\/([^/?#]+)/.exec(hash);
-  return m ? { name: "story", id: decodeURIComponent(m[1]!) } : { name: "library" };
+  const story = /^#\/story\/([^/?#]+)/.exec(hash);
+  if (story) return { name: "story", id: decodeURIComponent(story[1]!) };
+  if (/^#\/vocabulary\/?$/.test(hash)) return { name: "vocabulary" };
+  if (/^#\/review\/?$/.test(hash)) return { name: "review" };
+  return { name: "library" };
 }
 
-export const hashFor = (route: Route): string =>
-  route.name === "story" ? `#/story/${encodeURIComponent(route.id)}` : "#/";
+export function hashFor(route: Route): string {
+  switch (route.name) {
+    case "story":
+      return `#/story/${encodeURIComponent(route.id)}`;
+    case "vocabulary":
+      return "#/vocabulary";
+    case "review":
+      return "#/review";
+    default:
+      return "#/";
+  }
+}
 
 /**
  * Hash routing rather than a router dependency: two views, and it keeps the

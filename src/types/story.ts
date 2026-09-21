@@ -152,6 +152,8 @@ export function readingTimeMin(wordCount: number, level: Level): number {
  */
 export interface TapResult {
   surface: string;
+  /** The id of `primary` — the key vocabulary saves against. */
+  primaryId: EntryId;
   primary: LexEntry;
   literal: LexEntry | null;
   note?: string;
@@ -175,6 +177,7 @@ export function resolveTap(
 
   return {
     surface: token.s,
+    primaryId: span && spanEntry ? span.entry : token.entry,
     primary: spanEntry ?? word,
     literal: spanEntry ? word : null,
     ...(token.note === undefined ? {} : { note: token.note }),

@@ -1,11 +1,15 @@
 import { useEffect, useRef } from "react";
+import { isAutoSaved } from "../lib/vocab.js";
 import type { TapResult } from "../types/story.js";
 
 interface Props {
   tap: TapResult;
   /** Viewport coordinates of the tapped word. */
   anchor: { x: number; y: number };
+  saved: boolean;
   onClose: () => void;
+  onSave: () => void;
+  onRemove: () => void;
 }
 
 const POS_LABEL: Record<string, string> = {
@@ -26,7 +30,7 @@ const POS_LABEL: Record<string, string> = {
   PHRASE: "expression",
 };
 
-export function WordPopup({ tap, anchor, onClose }: Props) {
+export function WordPopup({ tap, anchor, saved, onClose, onSave, onRemove }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const { primary, literal, surface, note } = tap;
 
@@ -56,6 +60,7 @@ export function WordPopup({ tap, anchor, onClose }: Props) {
   }, [anchor, tap]);
 
   const gender = primary.gender === "m" ? "le" : primary.gender === "f" ? "la" : null;
+  const auto = isAutoSaved(primary.pos);
 
   return (
     <div ref={ref} className="popup" role="dialog" aria-label={`Translation of ${surface}`}>
@@ -89,6 +94,23 @@ export function WordPopup({ tap, anchor, onClose }: Props) {
       </dl>
 
       {primary.hint && <p className="popup-hint">{primary.hint}</p>}
+
+      <div className="popup-save">
+        {saved ? (
+          <button type="button" className="save-state saved" onClick={onRemove}>
+            ✓ In vocabulary — remove
+          </button>
+        ) : (
+          <button type="button" className="save-state" onClick={onSave}>
+            + Save to vocabulary
+          </button>
+        )}
+        {!auto && !saved && (
+          <span className="save-hint">
+            Function words are not saved automatically.
+          </span>
+        )}
+      </div>
 
       {literal && (
         <p className="popup-literal">

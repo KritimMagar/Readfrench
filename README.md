@@ -3,14 +3,18 @@
 A CEFR-graded French reader for English speakers. Tap any word for its
 translation, dictionary form and part of speech.
 
-**Status:** steps 1-2 of 5.
+**Status:** steps 1-3 of 5.
 
 - **Reader** — one sentence per line, tap any word for its translation,
   dictionary form and part of speech; per-sentence English toggle.
 - **Library** — four stories (three A1, one A2), level filtering that opens at
   your profile level, read/unread tracking and a day streak.
+- **Vocabulary** — tapped words are saved automatically, deduplicated by
+  lexeme, each shown in the sentence it was first met in.
+- **Review** — French-to-English flashcards scheduled by SM-2, graded with
+  Again / Hard / Good / Easy (or keys 1-4).
 
-Vocabulary/SRS, audio and quizzes are not built yet.
+Audio and quizzes are not built yet.
 
 ## Running it
 
@@ -43,9 +47,12 @@ tools/
 src/
   types/story.ts         the data model, shared by compiler and reader
   lib/progress.ts        profile, read tracking and streak (pure)
-  lib/route.ts           hash routing between library and reader
+  lib/srs.ts             SM-2 scheduling (pure)
+  lib/vocab.ts           the deck: saving, dedup by lexeme, due queue (pure)
+  lib/route.ts           hash routing between views
   storage.ts             the only module that touches localStorage
-  components/            Library, Reader, SentenceLine, WordPopup
+  components/            Library, Reader, SentenceLine, WordPopup,
+                         Vocabulary, Review, ContextSentence
 docs/data-model.md       the design, and why glosses are precomputed
 ```
 

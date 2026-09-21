@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { resolveTap, type Story, type TapResult } from "../types/story.js";
+import { buildItem, isAutoSaved, type VocabItem } from "../lib/vocab.js";
+import { resolveTap, type EntryId, type Story, type TapResult } from "../types/story.js";
 import { SentenceLine } from "./SentenceLine.js";
 import { WordPopup } from "./WordPopup.js";
 
@@ -14,11 +15,22 @@ interface Selection {
 interface ReaderProps {
   story: Story;
   read: boolean;
+  savedIds: ReadonlySet<EntryId>;
   onBack: () => void;
   onToggleRead: () => void;
+  onSaveWord: (item: VocabItem) => void;
+  onRemoveWord: (entryId: EntryId) => void;
 }
 
-export function Reader({ story, read, onBack, onToggleRead }: ReaderProps) {
+export function Reader({
+  story,
+  read,
+  savedIds,
+  onBack,
+  onToggleRead,
+  onSaveWord,
+  onRemoveWord,
+}: ReaderProps) {
   const [selection, setSelection] = useState<Selection | null>(null);
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
   const [allRevealed, setAllRevealed] = useState(false);
@@ -36,6 +48,14 @@ export function Reader({ story, read, onBack, onToggleRead }: ReaderProps) {
       if (!sentence) return;
       const tap = resolveTap(story, sentence, tokenIndex);
       if (!tap) return;
+
+      // Content words are saved just by being tapped; function words would
+      // bury the deck, so they wait for an explicit save.
+      if (isAutoSaved(tap.primary.pos)) {
+        const item = buildItem(tap.primaryId, tap.primary, { story, sentence, tokenIndex });
+        if (item) onSaveWord(item);
+      }
+
       const box = el.getBoundingClientRect();
       setSelection({
         sentence: sentenceIndex,
@@ -44,7 +64,7 @@ export function Reader({ story, read, onBack, onToggleRead }: ReaderProps) {
         anchor: { x: box.left + box.width / 2, y: box.top },
       });
     },
-    [story],
+    [story, onSaveWord],
   );
 
   const toggleSentence = useCallback((i: number) => {
@@ -115,7 +135,19 @@ export function Reader({ story, read, onBack, onToggleRead }: ReaderProps) {
         <WordPopup
           tap={selection.tap}
           anchor={selection.anchor}
+          saved={savedIds.has(selection.tap.primaryId)}
           onClose={() => setSelection(null)}
+          onSave={() => {
+            const sentence = story.sentences[selection.sentence];
+            if (!sentence) return;
+            const item = buildItem(selection.tap.primaryId, selection.tap.primary, {
+              story,
+              sentence,
+              tokenIndex: selection.token,
+            });
+            if (item) onSaveWord(item);
+          }}
+          onRemove={() => onRemoveWord(selection.tap.primaryId)}
         />
       )}
     </div>

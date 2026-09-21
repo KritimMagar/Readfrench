@@ -1,8 +1,8 @@
 # Story data model
 
-Status: **implemented for steps 1-2** (reader with tap-to-translate; library
-with level filtering, read tracking and a streak). Steps 3-5 are sketched at
-the end and not built.
+Status: **implemented for steps 1-3** (reader with tap-to-translate; library
+with level filtering, read tracking and a streak; vocabulary with SM-2
+review). Steps 4-5 are sketched at the end and not built.
 
 This document defines how a story is authored, how it is compiled, and what the
 reader consumes at runtime. Everything in steps 2-5 of the build order (library,
@@ -314,26 +314,50 @@ device clock or timezone moves. A day already read still counts towards the
 streak if the story is later marked unread. `src/storage.ts` is the only module
 that touches `localStorage`, so step 3 swaps four function bodies for API calls.
 
-**Vocabulary (step 3)** keys on `EntryId` and snapshots its context:
+**Vocabulary (step 3, built)** keys on `EntryId` and snapshots its context
+(`src/lib/vocab.ts`):
 
 ```ts
 interface VocabItem {
-  id: string;
-  entryId: EntryId;          // dedup key with userId
+  entryId: EntryId;          // the dedup key: one card per lexeme
   lemma: string; pos: Pos; en: string[];
   metSurface: string;        // what they actually tapped: "vais"
-  metStoryId: string;
+  metStoryId: string; metStoryTitle: string;
   metSentenceIndex: number;
   metSentenceFr: string;     // snapshot, not a pointer
   metSentenceEn: string;
+  metStart: number; metEnd: number;   // offsets for highlighting the word
   createdAt: string;
-  srs: { ease: number; intervalDays: number; reps: number; lapses: number; dueAt: string };
+  srs: SrsState;
 }
 ```
 
 The sentence is **copied, not referenced**. Content files get edited and offsets
 shift; "the sentence I first met this word in" should not silently change under
-a flashcard six weeks later.
+a flashcard six weeks later. The offsets are captured with the copy, so the two
+can never disagree.
+
+Keying on `EntryId` is what makes the deck behave: tapping *aime* twice, or
+*vais* and *allais*, yields one card. Re-meeting a saved word keeps the original
+context and schedule rather than resetting them.
+
+**What gets saved.** Content words (NOUN, PROPN, VERB, ADJ, ADV, NUM, INTJ,
+PHRASE) are saved just by being tapped. Function words are still tappable — a
+beginner needs to look up `le` — but auto-saving them buries the deck in
+articles and prepositions, so the popup offers an explicit save instead. An
+idiom saves the phrase, so tapping `a` in *Minuit a deux ans* files
+`avoir ... ans`, not `avoir`.
+
+**SM-2** lives in `src/lib/srs.ts`, kept pure and separate from the deck:
+
+    EF' = EF + (0.1 - (5-q) * (0.08 + (5-q) * 0.02))   floored at 1.3
+    intervals: 1 day, then 6 days, then round(previous * EF')
+
+Review buttons map to grades — Again 1, Hard 3, Good 4, Easy 5. A grade below 3
+is a lapse: repetitions restart but the ease penalty is kept, so a word that
+keeps failing comes back sooner each time. The review queue is fixed when a
+session starts, so a card graded *Again* (due tomorrow) does not reappear in
+the same pass.
 
 **Audio (step 4)** needs nothing new: `Sentence.fr` is the utterance, token
 offsets drive highlighting.
