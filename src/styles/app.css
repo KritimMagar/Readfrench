@@ -1,0 +1,283 @@
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --line: #e6e3dc;
+  --accent: #2d5f8a;
+  --accent-soft: #e8f0f7;
+  --phrase: #c2410c;
+  --radius: 10px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171d;
+    --surface: #1b1f27;
+    --text: #e8e6e1;
+    --muted: #9aa3b2;
+    --line: #2b313c;
+    --accent: #7fb2dd;
+    --accent-soft: #223244;
+    --phrase: #f0996a;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 6rem;
+}
+
+/* --- story picker --- */
+.story-picker {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.picker-item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.picker-item:hover { border-color: var(--accent); }
+
+.picker-item.current {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.picker-title { font-weight: 600; font-size: 0.95rem; }
+.picker-meta { font-size: 0.78rem; color: var(--muted); }
+
+/* --- story header --- */
+.story-head { margin-bottom: 2rem; }
+
+.story-head h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.story-sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.9rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.level-badge {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.reveal-all {
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.reveal-all:hover { border-color: var(--accent); color: var(--accent); }
+
+/* --- sentences --- */
+.paragraph { margin-bottom: 1.6rem; }
+
+.sentence { margin-bottom: 0.35rem; }
+
+.sentence-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.fr {
+  margin: 0;
+  font-size: 1.18rem;
+  line-height: 1.75;
+  flex: 1;
+}
+
+.en {
+  margin: 0.1rem 0 0.5rem;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.word {
+  font: inherit;
+  padding: 0.05em 0.02em;
+  margin: 0;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  /* A tapped word must sit exactly where the plain text would, so that the
+     sliced whitespace between tokens keeps the line spacing natural. */
+  line-height: inherit;
+}
+
+.word:hover { background: var(--accent-soft); }
+
+.word.selected {
+  background: var(--accent);
+  color: #fff;
+}
+
+.word.in-phrase {
+  box-shadow: inset 0 -2px 0 var(--phrase);
+}
+
+.word.in-phrase.selected { box-shadow: none; }
+
+.translate-toggle {
+  flex: 0 0 auto;
+  font: inherit;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.1rem 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  opacity: 0.45;
+}
+
+.sentence:hover .translate-toggle { opacity: 1; }
+
+.translate-toggle.on {
+  opacity: 1;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- word popup --- */
+.popup {
+  position: fixed;
+  visibility: hidden;
+  z-index: 20;
+  width: min(20rem, calc(100vw - 2rem));
+  padding: 0.85rem 1rem 0.95rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.16);
+}
+
+.popup-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.popup-surface {
+  font-size: 1.15rem;
+  font-weight: 650;
+}
+
+.popup-close {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.15rem;
+}
+
+.popup-en {
+  margin: 0.15rem 0 0.7rem;
+  font-size: 1.02rem;
+  color: var(--accent);
+  font-weight: 550;
+}
+
+.popup-meta {
+  margin: 0;
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+}
+
+.popup-meta > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.popup-meta dt {
+  flex: 0 0 7.6rem;
+  color: var(--muted);
+}
+
+.popup-meta dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.popup-gender { color: var(--muted); font-weight: 400; }
+
+.popup-hint,
+.popup-literal {
+  margin: 0.7rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.83rem;
+  color: var(--muted);
+}
+
+.popup-literal b { color: var(--text); }
+
+.empty { padding: 2rem; text-align: center; color: var(--muted); }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

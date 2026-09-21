@@ -12,8 +12,8 @@
   "sentenceCount": 28,
   "readingTimeMin": 3,
   "sourceFile": "content/stories/a1/le-chat-de-marie.md",
-  "sourceHash": "sha256:48ab8581bb2cb18b",
-  "compiledAt": "2026-09-20T00:00:00Z",
+  "sourceHash": "sha256:4729b57f6c71aa8c",
+  "compiledAt": "2026-09-21T12:13:51.376Z",
   "paragraphs": [
     {
       "from": 0,
@@ -87,8 +87,7 @@
           "end": 4,
           "s": "Elle",
           "k": "word",
-          "entry": "elle|PRON",
-          "note": "subject, feminine"
+          "entry": "elle|PRON"
         },
         {
           "i": 1,
@@ -266,8 +265,7 @@
           "end": 2,
           "s": "Il",
           "k": "word",
-          "entry": "il|PRON",
-          "note": "subject, masculine"
+          "entry": "il|PRON"
         },
         {
           "i": 1,
@@ -398,7 +396,7 @@
       "lemma": "avoir ... ans",
       "pos": "PHRASE",
       "en": [
-        "to be ... years old"
+        "is two years old"
       ],
       "hint": "avoir + number + ans, where English uses \"to be\""
     },
@@ -546,5 +544,5 @@
       ]
     }
   },
-  "_excerpt": "Trimmed for docs: sentences 0-3 and 11 of 28; paragraphs and entries trimmed to match."
+  "_excerpt": "Real compiler output, trimmed for docs: sentences 0-3 and 11 of 28, with entries and paragraphs cut to match."
 }

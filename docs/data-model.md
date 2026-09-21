@@ -1,6 +1,7 @@
 # Story data model
 
-Status: **proposed, awaiting sign-off.** No UI code is written yet.
+Status: **implemented for step 1** (reader with tap-to-translate on three A1
+stories). Steps 2-5 are sketched at the end and not built.
 
 This document defines how a story is authored, how it is compiled, and what the
 reader consumes at runtime. Everything in steps 2-5 of the build order (library,
@@ -97,7 +98,9 @@ The compiler emits one self-contained JSON file per story to
 `content/dist/<id>.json`. Self-contained means the reader does one fetch and
 needs no lookup logic beyond `story.entries[token.entry]`.
 
-A real example, generated from the story above, lives at
+`content/dist` is generated, not committed: `npm run content` rebuilds it, and
+`predev`/`prebuild` run it automatically. A real example, produced by the
+compiler from the story above, lives at
 `docs/examples/le-chat-de-marie.compiled.json` (trimmed to 5 of 28 sentences).
 
 ```ts
@@ -169,7 +172,7 @@ export interface Story {
   sentenceCount: number;
   readingTimeMin: number;
   sourceFile: string;
-  sourceHash: string;       // detects stale compiled output in CI
+  sourceHash: string;       // identifies the source revision this came from
   compiledAt: string;       // ISO 8601
   paragraphs: Paragraph[];
   sentences: Sentence[];
@@ -203,6 +206,7 @@ Deterministic, no NLP, ~40 lines. Verified against the real story:
 | `Aujourd'hui` | `Aujourd'hui` | Exception list: apostrophe is internal, not elision. |
 | `week-end` | `week-end` | Hyphens do not split; the compound is one dictionary word. |
 | `toujours : «` | `toujours` `:` `«` | Punctuation separate, spacing preserved via offsets. |
+| `6 h 30` | `6` `h` `30` | Numerals are inert like punctuation, but never merge with it. |
 
 Punctuation tokens are inert — not tappable, never saved to vocabulary.
 
@@ -250,6 +254,22 @@ Splitting them means `vais`, `allais` and `irai` all point at `aller|VERB`, whic
 is what makes the flashcard deck in step 3 deduplicate correctly: one card for
 *aller*, not three for three conjugations.
 
+## One authoring trap, enforced by the compiler
+
+In a YAML flow mapping, an unquoted comma is a separator, so
+
+```yaml
+"aimer|VERB": { lemma: aimer, pos: VERB, en: to like, to love }
+```
+
+silently keeps only *to like* and leaves `to love` as a null key. This bit the
+first draft of the lexicon in 100 rows. Quote any value containing a comma, or
+use a list (`en: [to like, to love]`).
+
+The compiler rejects unknown keys in `forms.yaml`, `entries.yaml` and story
+frontmatter precisely so this fails the build instead of quietly shipping a
+half-translated word.
+
 ## Validation — the build fails, loudly
 
 The compiler is the only quality gate content has, so it is strict:
@@ -263,6 +283,9 @@ The compiler is the only quality gate content has, so it is strict:
 - `id` is unique across the corpus and matches the filename.
 - `level` and every `topics` value are in the unions above.
 - Warn, don't fail, when `wordCount` is outside 150-400.
+- The lexicon itself is schema-checked: every form points at a defined entry,
+  every entry key matches its own lemma and pos, no unknown keys, and `en` must
+  be text (a bare `true` or, in YAML 1.1 tools, `on` is not).
 
 `readingTimeMin = max(1, round(wordCount / wpm[level]))`, with
 `wpm = { A1: 60, A2: 80, B1: 100, B2: 130, C1: 160, C2: 190 }` — learner reading
@@ -308,7 +331,7 @@ frontmatter block — `{ q, options[4], answer, explanationEn }`.
 1. **Gloss depth for function words.** Do you want `le`, `de`, `à` tappable with
    full glosses, or greyed out as noise once a learner is past A1? Currently
    everything is tappable.
-2. **Authoring the lexicon.** For three A1 stories I can write `forms.yaml` by
-   hand (~250 forms). Beyond that it wants a seed dictionary. Fine to defer.
+2. **Authoring the lexicon.** 235 forms cover the three A1 stories, written by
+   hand. Beyond that it wants a seed dictionary.
 3. **English translation register.** I translated fairly literally, to stay
    useful as a crutch. Idiomatic-but-looser is also defensible.

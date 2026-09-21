@@ -16,7 +16,10 @@ mwe:
     en: there is, there are
   - fr: le week-end
     en: at the weekend
+  - fr: petit déjeuner
+    en: breakfast
   - fr: a deux ans
+    lemma: avoir ... ans
     en: is two years old
     note: avoir + number + ans, where English uses "to be"
 ---

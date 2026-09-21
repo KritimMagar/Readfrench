@@ -1,1 +1,55 @@
-# Readfrench
+# ReadFrench
+
+A CEFR-graded French reader for English speakers. Tap any word for its
+translation, dictionary form and part of speech.
+
+**Status:** step 1 of 5 — the reader, with tap-to-translate on three A1 stories.
+Library filtering, vocabulary/SRS, audio and quizzes are not built yet.
+
+## Running it
+
+```bash
+npm install
+npm run dev      # compiles content, then serves at :5173
+```
+
+Other scripts:
+
+| Script | What it does |
+| --- | --- |
+| `npm run content` | Compiles `content/stories/**/*.md` to `content/dist/*.json` |
+| `npm test` | Tokenizer and compiler tests |
+| `npm run typecheck` | `tsc --noEmit` |
+| `npm run build` | Compiles content, typechecks, then builds the site |
+
+## Layout
+
+```
+content/
+  stories/a1/*.md        authored stories: frontmatter + sentence/translation pairs
+  lexicon/forms.yaml     inflected form -> lexeme, plus how it is inflected
+  lexicon/entries.yaml   lexeme -> English senses, gender, usage hints
+  dist/                  compiled JSON (generated, not committed)
+tools/
+  tokenize.ts            deterministic French tokenizer
+  content.ts             frontmatter parsing, gloss resolution, validation
+  compile.ts             CLI: content/ -> content/dist/
+src/
+  types/story.ts         the data model, shared by compiler and reader
+  components/            Reader, SentenceLine, WordPopup
+docs/data-model.md       the design, and why glosses are precomputed
+```
+
+## Adding a story
+
+1. Drop a markdown file in `content/stories/<level>/`. One French sentence per
+   line, its English translation on the next line as `> `, blank line between
+   paragraphs.
+2. Run `npm run content`. Any word without a gloss fails the build and is
+   listed in a form ready to paste into `content/lexicon/forms.yaml`.
+3. Fill in the missing forms and re-run.
+
+Quote any YAML value containing a comma — inside `{ }` a bare comma splits the
+row. The compiler rejects the leftovers rather than shipping them.
+
+See `docs/data-model.md` for the story data model and the reasoning behind it.
