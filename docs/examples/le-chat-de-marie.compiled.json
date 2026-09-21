@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "id": "le-chat-de-marie",
+  "level": "A1",
+  "title": "Le chat de Marie",
+  "titleEn": "Marie's Cat",
+  "topics": [
+    "animals",
+    "daily-life"
+  ],
+  "wordCount": 178,
+  "sentenceCount": 28,
+  "readingTimeMin": 3,
+  "sourceFile": "content/stories/a1/le-chat-de-marie.md",
+  "sourceHash": "sha256:4729b57f6c71aa8c",
+  "compiledAt": "2026-09-21T12:13:51.376Z",
+  "paragraphs": [
+    {
+      "from": 0,
+      "to": 4
+    },
+    {
+      "from": 4,
+      "to": 9
+    },
+    {
+      "from": 9,
+      "to": 13
+    }
+  ],
+  "sentences": [
+    {
+      "i": 0,
+      "fr": "Marie habite à Lyon.",
+      "en": "Marie lives in Lyon.",
+      "tokens": [
+        {
+          "i": 0,
+          "start": 0,
+          "end": 5,
+          "s": "Marie",
+          "k": "word",
+          "entry": "Marie|PROPN"
+        },
+        {
+          "i": 1,
+          "start": 6,
+          "end": 12,
+          "s": "habite",
+          "k": "word",
+          "entry": "habiter|VERB",
+          "note": "present, il/elle"
+        },
+        {
+          "i": 2,
+          "start": 13,
+          "end": 14,
+          "s": "à",
+          "k": "word",
+          "entry": "à|ADP"
+        },
+        {
+          "i": 3,
+          "start": 15,
+          "end": 19,
+          "s": "Lyon",
+          "k": "word",
+          "entry": "Lyon|PROPN"
+        },
+        {
+          "i": 4,
+          "start": 19,
+          "end": 20,
+          "s": ".",
+          "k": "punct"
+        }
+      ]
+    },
+    {
+      "i": 1,
+      "fr": "Elle a un petit chat noir.",
+      "en": "She has a little black cat.",
+      "tokens": [
+        {
+          "i": 0,
+          "start": 0,
+          "end": 4,
+          "s": "Elle",
+          "k": "word",
+          "entry": "elle|PRON"
+        },
+        {
+          "i": 1,
+          "start": 5,
+          "end": 6,
+          "s": "a",
+          "k": "word",
+          "entry": "avoir|VERB",
+          "note": "present, il/elle"
+        },
+        {
+          "i": 2,
+          "start": 7,
+          "end": 9,
+          "s": "un",
+          "k": "word",
+          "entry": "un|DET",
+          "note": "masculine singular"
+        },
+        {
+          "i": 3,
+          "start": 10,
+          "end": 15,
+          "s": "petit",
+          "k": "word",
+          "entry": "petit|ADJ",
+          "note": "masculine singular"
+        },
+        {
+          "i": 4,
+          "start": 16,
+          "end": 20,
+          "s": "chat",
+          "k": "word",
+          "entry": "chat|NOUN"
+        },
+        {
+          "i": 5,
+          "start": 21,
+          "end": 25,
+          "s": "noir",
+          "k": "word",
+          "entry": "noir|ADJ",
+          "note": "masculine singular"
+        },
+        {
+          "i": 6,
+          "start": 25,
+          "end": 26,
+          "s": ".",
+          "k": "punct"
+        }
+      ]
+    },
+    {
+      "i": 2,
+      "fr": "Le chat s'appelle Minuit.",
+      "en": "The cat is called Minuit.",
+      "tokens": [
+        {
+          "i": 0,
+          "start": 0,
+          "end": 2,
+          "s": "Le",
+          "k": "word",
+          "entry": "le|DET",
+          "note": "masculine singular"
+        },
+        {
+          "i": 1,
+          "start": 3,
+          "end": 7,
+          "s": "chat",
+          "k": "word",
+          "entry": "chat|NOUN"
+        },
+        {
+          "i": 2,
+          "start": 8,
+          "end": 10,
+          "s": "s'",
+          "k": "word",
+          "entry": "se|PRON",
+          "note": "reflexive, elided before a vowel"
+        },
+        {
+          "i": 3,
+          "start": 10,
+          "end": 17,
+          "s": "appelle",
+          "k": "word",
+          "entry": "appeler|VERB",
+          "note": "present, il/elle"
+        },
+        {
+          "i": 4,
+          "start": 18,
+          "end": 24,
+          "s": "Minuit",
+          "k": "word",
+          "entry": "Minuit|PROPN"
+        },
+        {
+          "i": 5,
+          "start": 24,
+          "end": 25,
+          "s": ".",
+          "k": "punct"
+        }
+      ]
+    },
+    {
+      "i": 3,
+      "fr": "Minuit a deux ans.",
+      "en": "Minuit is two years old.",
+      "tokens": [
+        {
+          "i": 0,
+          "start": 0,
+          "end": 6,
+          "s": "Minuit",
+          "k": "word",
+          "entry": "Minuit|PROPN"
+        },
+        {
+          "i": 1,
+          "start": 7,
+          "end": 8,
+          "s": "a",
+          "k": "word",
+          "entry": "avoir|VERB",
+          "note": "present, il/elle"
+        },
+        {
+          "i": 2,
+          "start": 9,
+          "end": 13,
+          "s": "deux",
+          "k": "word",
+          "entry": "deux|NUM"
+        },
+        {
+          "i": 3,
+          "start": 14,
+          "end": 17,
+          "s": "ans",
+          "k": "word",
+          "entry": "an|NOUN",
+          "note": "plural"
+        },
+        {
+          "i": 4,
+          "start": 17,
+          "end": 18,
+          "s": ".",
+          "k": "punct"
+        }
+      ],
+      "spans": [
+        {
+          "from": 1,
+          "to": 4,
+          "entry": "avoir ... ans|PHRASE"
+        }
+      ]
+    },
+    {
+      "i": 11,
+      "fr": "Il y a une grande fenêtre dans le salon.",
+      "en": "There is a big window in the living room.",
+      "tokens": [
+        {
+          "i": 0,
+          "start": 0,
+          "end": 2,
+          "s": "Il",
+          "k": "word",
+          "entry": "il|PRON"
+        },
+        {
+          "i": 1,
+          "start": 3,
+          "end": 4,
+          "s": "y",
+          "k": "word",
+          "entry": "y|PRON"
+        },
+        {
+          "i": 2,
+          "start": 5,
+          "end": 6,
+          "s": "a",
+          "k": "word",
+          "entry": "avoir|VERB",
+          "note": "present, il/elle"
+        },
+        {
+          "i": 3,
+          "start": 7,
+          "end": 10,
+          "s": "une",
+          "k": "word",
+          "entry": "un|DET",
+          "note": "feminine singular"
+        },
+        {
+          "i": 4,
+          "start": 11,
+          "end": 17,
+          "s": "grande",
+          "k": "word",
+          "entry": "grand|ADJ",
+          "note": "feminine singular"
+        },
+        {
+          "i": 5,
+          "start": 18,
+          "end": 25,
+          "s": "fenêtre",
+          "k": "word",
+          "entry": "fenêtre|NOUN"
+        },
+        {
+          "i": 6,
+          "start": 26,
+          "end": 30,
+          "s": "dans",
+          "k": "word",
+          "entry": "dans|ADP"
+        },
+        {
+          "i": 7,
+          "start": 31,
+          "end": 33,
+          "s": "le",
+          "k": "word",
+          "entry": "le|DET",
+          "note": "masculine singular"
+        },
+        {
+          "i": 8,
+          "start": 34,
+          "end": 39,
+          "s": "salon",
+          "k": "word",
+          "entry": "salon|NOUN"
+        },
+        {
+          "i": 9,
+          "start": 39,
+          "end": 40,
+          "s": ".",
+          "k": "punct"
+        }
+      ],
+      "spans": [
+        {
+          "from": 0,
+          "to": 3,
+          "entry": "il y a|PHRASE"
+        }
+      ]
+    }
+  ],
+  "entries": {
+    "Lyon|PROPN": {
+      "lemma": "Lyon",
+      "pos": "PROPN",
+      "en": [
+        "Lyon"
+      ],
+      "hint": "city in south-east France"
+    },
+    "Marie|PROPN": {
+      "lemma": "Marie",
+      "pos": "PROPN",
+      "en": [
+        "Marie"
+      ]
+    },
+    "Minuit|PROPN": {
+      "lemma": "Minuit",
+      "pos": "PROPN",
+      "en": [
+        "Midnight"
+      ],
+      "hint": "the cat's name"
+    },
+    "an|NOUN": {
+      "lemma": "an",
+      "pos": "NOUN",
+      "en": [
+        "year"
+      ],
+      "gender": "m"
+    },
+    "appeler|VERB": {
+      "lemma": "appeler",
+      "pos": "VERB",
+      "en": [
+        "to call",
+        "to name"
+      ]
+    },
+    "avoir ... ans|PHRASE": {
+      "lemma": "avoir ... ans",
+      "pos": "PHRASE",
+      "en": [
+        "is two years old"
+      ],
+      "hint": "avoir + number + ans, where English uses \"to be\""
+    },
+    "avoir|VERB": {
+      "lemma": "avoir",
+      "pos": "VERB",
+      "en": [
+        "to have"
+      ]
+    },
+    "chat|NOUN": {
+      "lemma": "chat",
+      "pos": "NOUN",
+      "en": [
+        "cat"
+      ],
+      "gender": "m"
+    },
+    "dans|ADP": {
+      "lemma": "dans",
+      "pos": "ADP",
+      "en": [
+        "in",
+        "inside"
+      ]
+    },
+    "deux|NUM": {
+      "lemma": "deux",
+      "pos": "NUM",
+      "en": [
+        "two"
+      ]
+    },
+    "elle|PRON": {
+      "lemma": "elle",
+      "pos": "PRON",
+      "en": [
+        "she",
+        "her"
+      ]
+    },
+    "fenêtre|NOUN": {
+      "lemma": "fenêtre",
+      "pos": "NOUN",
+      "en": [
+        "window"
+      ],
+      "gender": "f"
+    },
+    "grand|ADJ": {
+      "lemma": "grand",
+      "pos": "ADJ",
+      "en": [
+        "big",
+        "large",
+        "tall"
+      ]
+    },
+    "habiter|VERB": {
+      "lemma": "habiter",
+      "pos": "VERB",
+      "en": [
+        "to live",
+        "to reside"
+      ]
+    },
+    "il y a|PHRASE": {
+      "lemma": "il y a",
+      "pos": "PHRASE",
+      "en": [
+        "there is",
+        "there are"
+      ]
+    },
+    "il|PRON": {
+      "lemma": "il",
+      "pos": "PRON",
+      "en": [
+        "he",
+        "it"
+      ]
+    },
+    "le|DET": {
+      "lemma": "le",
+      "pos": "DET",
+      "en": [
+        "the"
+      ]
+    },
+    "noir|ADJ": {
+      "lemma": "noir",
+      "pos": "ADJ",
+      "en": [
+        "black"
+      ]
+    },
+    "petit|ADJ": {
+      "lemma": "petit",
+      "pos": "ADJ",
+      "en": [
+        "small",
+        "little"
+      ]
+    },
+    "salon|NOUN": {
+      "lemma": "salon",
+      "pos": "NOUN",
+      "en": [
+        "living room",
+        "lounge"
+      ],
+      "gender": "m"
+    },
+    "se|PRON": {
+      "lemma": "se",
+      "pos": "PRON",
+      "en": [
+        "oneself",
+        "himself",
+        "herself"
+      ]
+    },
+    "un|DET": {
+      "lemma": "un",
+      "pos": "DET",
+      "en": [
+        "a",
+        "an"
+      ]
+    },
+    "y|PRON": {
+      "lemma": "y",
+      "pos": "PRON",
+      "en": [
+        "there"
+      ]
+    },
+    "à|ADP": {
+      "lemma": "à",
+      "pos": "ADP",
+      "en": [
+        "in",
+        "at",
+        "to"
+      ]
+    }
+  },
+  "_excerpt": "Real compiler output, trimmed for docs: sentences 0-3 and 11 of 28, with entries and paragraphs cut to match."
+}
